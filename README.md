@@ -14,7 +14,7 @@ by [moovel lab](http://lab.moovel.com) and [moovel dev team](https://moovel.com)
  - messages & reactions
  - emoji timeline
 
-Client app is built with [React](https://facebook.github.io/react/) and [JSPM](http://jspm.io/). Vizualisations leverage [react-vis](https://github.com/uber/react-vis) and [d3](https://d3js.org/). Server is written in ES6+ using [Koa 2](https://github.com/koajs/koa) and [Babel](https://babeljs.io/). PostgreSQL is used a database with the help of [pg-promise](https://www.npmjs.com/package/pg-promise).
+Client app is built with [React](https://facebook.github.io/react/) and [JSPM](http://jspm.io/). Visualisations leverage [react-vis](https://github.com/uber/react-vis) and [d3](https://d3js.org/). Server is written in ES6+ using [Koa 2](https://github.com/koajs/koa) and [Babel](https://babeljs.io/). PostgreSQL is used a database with the help of [pg-promise](https://www.npmjs.com/package/pg-promise).
 
 Nota bene: &#35;teamchatviz is not created by, affiliated with, or supported by Slack Technologies, Inc. Please comply with your applicable data protection and labour law regulations when using our tool.
 
@@ -24,16 +24,16 @@ See the project page [moovel.github.io/teamchatviz](http://moovel.github.io/team
 
 Online Demo
 -----------
-Online demo app under [teamchatviz-demo.moovel.com](http://teamchatviz-demo.moovel.com/) (with fake Slack team data, generated with Faker.js). 
+Online demo app under [teamchatviz-demo.moovel.com](https://teamchatviz-demo.moovel.com/) (with fake Slack team data, generated with Faker.js). 
 
 Currently supported browsers: latest Chrome/Chromium, Firefox or Safari. 
 
 Running your own instance of &#35;teamchatviz App
 -----------------------------
-1. Go to [api.slack.com/apps/new](https://api.slack.com/apps/new) and create a new app. Go to the App Credentials tab of the newly created app to get client id and client secret. Specify the following Redirect URI for your Slack App: `http://<hostname of your server>/api/auth/slack/callback`
-2. Create a Heroku instance of &#35;teamchatviz using the Deploy to Heroku button below. Specify the choosen hostname, client id and client secret during the creation of the Heroku instance.
-3. Navigate to `http://<hostname of your server>` and press Add to Slack button. Grant all required permissions to the Slack app that you created on step #1. 
-4. The data about your team will be loaded in the background and will visualizations will be available soon.
+1. Go to [api.slack.com/apps/new](https://api.slack.com/apps/new) and create a new app. Go to the `App Credentials` tab of the newly created app to get client id and client secret. Specify the following Redirect URI for your Slack App: `http://<hostname of your server>/api/auth/slack/callback`
+2. Create a Heroku instance of &#35;teamchatviz using the `Deploy to Heroku` button below. Specify the choosen hostname, client id and client secret during the creation of the Heroku instance.
+3. Navigate to `http://<hostname of your server>` and press `Add to Slack` button. Grant all required permissions to the Slack app that you created on step #1. 
+4. The data about your team will be loaded in the background and the visualizations will be available soon.
 
 Run on Heroku
 -------------
@@ -41,6 +41,10 @@ Run on Heroku
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/moovel/teamchatviz/tree/master)
 
 Never heard of Heroku? Here's how to install it: [https://youtu.be/8lzdCWoiDbY](https://youtu.be/8lzdCWoiDbY)
+
+Run with Docker
+-------------
+See [docker image](https://hub.docker.com/r/xqua/teamchatviz/) by [Xqua](https://github.com/Xqua)
 
 Development Setup
 -----------------
@@ -63,9 +67,9 @@ You need a recent Node JS version (4+) installed and JSPM 0.17 Beta (`npm instal
   SESSION_SECRET="secret"
   ```
   
-  If PUBLIC === true the data loaded into the system will be public and will not require authentication via Slack. If ANONYMIZE === true the data loaded into the system will be replaced with the fake data using Faker.js. Anonymization will happen only on the initial data loading and before the data reaches the database.
+  If PUBLIC === true the data loaded into the system will be public and will not require authentication via Slack. If ANONYMIZE === true the data loaded into the system will be replaced with the fake data using `Faker.js`. Anonymization will happen only on the initial data loading and before the data reaches the database.
   
-  If PUBLIC === true, Add to Slack button on the Main page is hidden and login is disabled. If you change the PUBLIC setting for an existing instance, the changes will apply only after a restart of the server. 
+  If PUBLIC === true, `Add to Slack` button on the Main page is hidden and login is disabled. If you change the PUBLIC setting for an existing instance, the changes will apply only after a restart of the server. 
 
 6. Create database as described in the next section and apply database migration by running `npm run up`.
 7. `npm start` - start the server.
